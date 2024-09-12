@@ -1,0 +1,135 @@
+.main-background{
+    background-color: #d8c16d;
+}
+
+.main-background h1{
+    color: rgb(201, 105, 105);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+
+h1 {
+    text-transform: uppercase;
+    color: #185519;
+
+}
+
+.main-content {
+    
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 2%;
+    margin: 20px;
+    text-align: center;
+
+
+}
+
+.description {
+    width: 50%;
+    float: right;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+
+}
+
+
+.index-pictures {
+
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+
+
+
+
+}
+
+.index-pictures img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 50%;
+    height: auto;
+    top: 150px;
+
+}
+
+ul {
+    text-align: left;
+    list-style-type: none;
+    font-size: larger;
+
+}
+
+
+.wikipedia{
+    text-transform: uppercase;
+    
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 2%;
+    margin:  3%;
+    
+    
+    
+    
+
+}
+
+.tables, th , td{
+  width: 600px;
+  border: 1px solid black;
+  border-radius: 2%;
+  margin-top: 50%;
+  margin-left: 5px;
+  
+
+  
+
+}
+
+.all-types{
+    background-color: #FCDE70;
+}
+
+.bulbasaur{
+    background-color: #7bc27c;
+}
+
+.pikachu{
+    background-color: rgb(216, 207, 83);
+}
+
+.pikachu h1{
+    color: rgb(255, 255, 0);
+}
+
+.squirtle{
+    background-color: lightblue;
+}
+
+.squirtle h1{
+    color: rgb(31, 88, 194);
+}
+
+.charmanders{
+    background-color: lightcoral;
+}
+
+.charmanders h1{
+    color: rgb(230, 30, 30);
+}
+
