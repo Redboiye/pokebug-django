@@ -19,9 +19,7 @@ from django.urls import path
 from pokemon import views
 
 urlpatterns = [
-    path("", views.home, name='home')
+    path("", views.home, name='home'),
+    path("pokemon/<int:pokemon_id>", views.pokemon_detail, name='pokemon_detail'),
 
 ]
-
-
-
