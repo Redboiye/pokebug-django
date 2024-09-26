@@ -2,11 +2,12 @@ from django.db import models
 
 
 class Pokemon(models.Model):
-    title = models.CharField(max_length=100, null=False)
-    description = models.TextField(null=False)
-    type = models.CharField(max_length=32)
-    picture = models.URLField(null=False)
+    name = models.CharField(max_length=100, null=False)
+    description = models.TextField(null=True)
+    type = models.CharField(max_length=32, null=True)
+    picture = models.URLField(null=True)
     video = models.CharField(max_length=64, null=True)
+    url = models.URLField(null=True)
 
     def __str__(self):
-        return self.title
+        return self.name
