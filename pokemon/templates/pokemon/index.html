@@ -1,94 +1,91 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
+    {% load static %}
     <title>PokeBug - Main menu</title>
     <link rel="icon" type="image" href="static/img/41gk1hzeG6L._AC_UF1000,1000_QL80_.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/styles.css">
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <script src="static/js/main.js"></script>
 </head>
 
 <body class="main-background">
-    <div class="navigation">
-        <nav class="navbar navbar-expand-sm bg-light navbar-light">
-            <div class="container-fluid">
-                <ul class="navbar-nav">
+<div class="navigation">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Main menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="all_types.html">All types</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="bulbasaur.html">Bulbasaur</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pikachu.html"> Pikachu</a>
-                    </li>
-                    <li class="nav-item"></li>
-                    <a class="nav-link" href="squirtle.html">Squirtle</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="charmanders.html"> Charmander</a>
-                    </li>
-
-                </ul>
-            </div>
-        </nav>
-
-
-
-
-
-    </div>
-    <div class="title">
-        <h1>PokeBug</h1>
-    </div>
-    <div class="main-content">
-
-
-        <div class="index-pictures">
-            <img class="picture" onmouseover="enlargeImg()" onmouseout="shrinkImg()"
-                src="https://supereffective.gg/_next/image?url=%2Fimages%2Fpokedex.png&w=640&q=75"
-                alt="picture of Bulbasaur">
-
-        </div>
-        <div class="index-pictures">
-            <h2>All Pokemons</h2>
-            <ul>
-                {% for pokemon in all_pokemons %}
-                <li>
-
-                    <a href="{% url 'pokemon_detail' pokemon.id %}">
-                        {{ pokemon.title }}
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Main menu</a>
                 </li>
-                {% endfor %}
+                <li class="nav-item">
+                    <a class="nav-link" href="all_types.html">All types</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bulbasaur.html">Bulbasaur</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pikachu.html"> Pikachu</a>
+                </li>
+                <li class="nav-item"></li>
+                <a class="nav-link" href="squirtle.html">Squirtle</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="charmanders.html"> Charmander</a>
+                </li>
+
             </ul>
-
-
         </div>
-        <div class="description">
-            <h2>New type of Pokedex</h2>
-            <ul>
-                <li>1. New type of hybrid Pokemons</li>
-                <li>2. Never seen before features</li>
-                <li>3. Trying to not get sued by Nintendo</li>
-                <li>4. For fun</li>
-                <li>5...Coming soon</li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer">
+    </nav>
 
-        <footer>
-            <p>Author: Kasis Kuksis ©2024</p>
-        </footer>
+
+</div>
+<div class="title">
+    <h1>PokeBug</h1>
+</div>
+<div class="main-content">
+
+
+    <div class="index-pictures">
+        <img class="picture" onmouseover="enlargeImg()" onmouseout="shrinkImg()"
+             src="https://supereffective.gg/_next/image?url=%2Fimages%2Fpokedex.png&w=640&q=75"
+             alt="picture of Bulbasaur">
+
     </div>
+    <div class="index-pictures">
+        <h2>All Pokemons</h2>
+        <ul>
+            {% for pokemon in all_pokemons %}
+            <li>
+
+                <a href="{% url 'pokemon_detail' pokemon.id %}">
+                    {{ pokemon.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+
+
+    </div>
+    <div class="description">
+        <h2>New type of Pokedex</h2>
+        <ul>
+            <li>1. New type of hybrid Pokemons</li>
+            <li>2. Never seen before features</li>
+            <li>3. Trying to not get sued by Nintendo</li>
+            <li>4. For fun</li>
+            <li>5...Coming soon</li>
+        </ul>
+    </div>
+</div>
+<div class="footer">
+
+    <footer>
+        <p>Author: Kasis Kuksis ©2024</p>
+    </footer>
+</div>
 </body>
 
 </html>

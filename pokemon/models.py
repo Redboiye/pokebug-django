@@ -6,7 +6,7 @@ class Pokemon(models.Model):
     description = models.TextField(null=False)
     type = models.CharField(max_length=32)
     picture = models.URLField(null=False)
-    video = models.TextField(null=True)
+    video = models.CharField(max_length=64, null=True)
 
     def __str__(self):
         return self.title

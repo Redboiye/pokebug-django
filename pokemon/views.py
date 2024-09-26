@@ -12,8 +12,8 @@ def home(request):
     return render(request, "pokemon/index.html", context)
 
 
-def pokemon_detail(request, pokemon_id):
+def pokemon_detail(request, pokemon_id,):
     pokemon = get_object_or_404(Pokemon, id=pokemon_id)
-    context = {"pokemon": pokemon}
+    context = {"pokemon": pokemon, "type": pokemon.type.lower()}
 
     return render(request, "pokemon/pokemon_details.html", context)

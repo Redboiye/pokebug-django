@@ -6,13 +6,6 @@
     color: rgb(201, 105, 105);
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
-
-
-
 h1 {
     text-transform: uppercase;
     color: #185519;
@@ -105,31 +98,25 @@ ul {
     background-color: #FCDE70;
 }
 
-.bulbasaur{
-    background-color: #7bc27c;
+.grass {
+    background-color: #008000;
+
 }
 
-.pikachu{
-    background-color: rgb(216, 207, 83);
+.fire {
+    background-color: #FF0000;
+
 }
 
-.pikachu h1{
-    color: rgb(255, 255, 0);
+.fire h1 {
+    color: #e61e1e;
 }
 
-.squirtle{
-    background-color: lightblue;
+.water {
+    background-color: #0000FF;
 }
 
-.squirtle h1{
-    color: rgb(31, 88, 194);
-}
-
-.charmanders{
-    background-color: lightcoral;
-}
-
-.charmanders h1{
-    color: rgb(230, 30, 30);
+.electric {
+    background-color: #FFFF00;
 }
 
