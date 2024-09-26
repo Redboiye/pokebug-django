@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+<body class="{{ type }}">
+<div>
+    <h1>{{ pokemon.title }}</h1>
+    <h2>{{ type }} </h2>
+    <p>{{ pokemon.description }}</p>
+    <img src="{{ pokemon.picture }}">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ pokemon.video }}"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+</body>
+</html>
