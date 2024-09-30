@@ -28,7 +28,7 @@ def home(request):
         pokemon_detail_type = pokemon_types[0].get("type").get("name")
         pokemon_detail_artwork = pokemon_detail_data.get("sprites").get("other").get("official-artwork").get(
             "front_default")
-        print(name, pokemon_detail_type, pokemon_detail_artwork)
+
         Pokemon.objects.update_or_create(
             name=name,
             url=pokemon_details_url,
@@ -45,8 +45,8 @@ def home(request):
     return render(request, "pokemon/index.html", context)
 
 
-def pokemon_detail(request, pokemon_id, ):
-    pokemon = get_object_or_404(Pokemon, id=pokemon_id)
+def pokemon_detail(request, pokemon_name, ):
+    pokemon = get_object_or_404(Pokemon, name=pokemon_name)
     context = {"pokemon": pokemon, "type": pokemon.type.lower()}
 
     return render(request, "pokemon/pokemon_details.html", context)
