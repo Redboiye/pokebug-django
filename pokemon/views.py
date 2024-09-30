@@ -5,6 +5,7 @@ from .models import Pokemon
 
 # request ir metadati, url, sakara ar backend komunikaciju
 def home(request):
+    context = {}
     url = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0"
     # get metode
     response = requests.get(url)
@@ -28,6 +29,13 @@ def home(request):
         pokemon_detail_type = pokemon_types[0].get("type").get("name")
         pokemon_detail_artwork = pokemon_detail_data.get("sprites").get("other").get("official-artwork").get(
             "front_default")
+        pokemon_id = pokemon_detail_data.get("id")
+        description_url = f"https://pokeapi.co/api/v2/pokemon-species/{pokemon_id}"
+        pokemon_description_response = requests.get(description_url)
+        pokemon_description_data = pokemon_description_response.json()
+        pokemon_description = pokemon_description_data.get(
+            "flavor_text_entries")[0].get("flavor_text").replace("\n", " ").replace("\u000c", " ")
+
 
         # datubaze saglaba vai atjauno objektus.
         Pokemon.objects.update_or_create(
@@ -36,6 +44,7 @@ def home(request):
                 'url': pokemon_details_url,
                 'type': pokemon_detail_type,
                 'picture': pokemon_detail_artwork,
+                'description': pokemon_description,
             }
         )
 
@@ -44,7 +53,7 @@ def home(request):
         # context pado informaciju uz html un ir pieejama ar conteksta atslegam
         context = {"all_pokemons": pokemons}
 
-        return render(request, "pokemon/index.html", context)
+    return render(request, "pokemon/index.html", context)
 
 
 def pokemon_detail(request, pokemon_name, ):
