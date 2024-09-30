@@ -124,3 +124,7 @@ ul {
     background-color: #C0C0C0;
 }
 
+.index-pictures {
+    overflow-y: auto;
+    height:400px;
+}

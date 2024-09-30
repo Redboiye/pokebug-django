@@ -58,12 +58,12 @@
         <h2>All Pokemons</h2>
         <ul>
             {% for pokemon in all_pokemons %}
-            <li>
+                <li>
 
-                <a href="{% url 'pokemon_detail' pokemon.id %}">
-                    {{ pokemon.title }}
-                </a>
-            </li>
+                    <a href="{% url 'pokemon_detail' pokemon.name %}">
+                        {{ pokemon.name }}
+                    </a>
+                </li>
             {% endfor %}
         </ul>
 

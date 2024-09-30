@@ -29,12 +29,14 @@ def home(request):
         pokemon_detail_artwork = pokemon_detail_data.get("sprites").get("other").get("official-artwork").get(
             "front_default")
 
+        # datubaze saglaba vai atjauno objektus.
         Pokemon.objects.update_or_create(
             name=name,
-            url=pokemon_details_url,
-            type=pokemon_detail_type,
-            picture=pokemon_detail_artwork,
-
+            defaults={
+                'url': pokemon_details_url,
+                'type': pokemon_detail_type,
+                'picture': pokemon_detail_artwork,
+            }
         )
 
         # ORM metode all pasauc objektus no Pokemon
@@ -42,7 +44,7 @@ def home(request):
         # context pado informaciju uz html un ir pieejama ar conteksta atslegam
         context = {"all_pokemons": pokemons}
 
-    return render(request, "pokemon/index.html", context)
+        return render(request, "pokemon/index.html", context)
 
 
 def pokemon_detail(request, pokemon_name, ):

@@ -15,7 +15,13 @@
 <div>
     <h1>{{ pokemon.name }}</h1>
     <h2>{{ type }} </h2>
-    <p>{{ pokemon.description }}</p>
+    {% if  pokemon.description %}
+        <p>{{ pokemon.description }}</p>
+    {% else %}
+        <p></p>
+    {% endif %}
+
+
     <img src="{{ pokemon.picture }}">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ pokemon.video }}"
             title="YouTube video player" frameborder="0"
