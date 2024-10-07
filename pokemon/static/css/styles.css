@@ -94,6 +94,13 @@ ul {
 
 .grass {
     background-color: #5eaf5e;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
 
 }
 
