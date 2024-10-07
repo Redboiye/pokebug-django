@@ -1,19 +1,20 @@
-.main-background{
+.main-background {
     background-color: #d8c16d;
 }
 
-.main-background h1{
+.main-background h1 {
     color: rgb(201, 105, 105);
+    text-align: center;
 }
 
 h1 {
     text-transform: uppercase;
-    color: #185519;
+    color: #ffffff;
 
 }
 
 .main-content {
-    
+
     display: flex;
     justify-content: space-between;
     border: 2px solid black;
@@ -47,8 +48,6 @@ h1 {
     font-size: 150%;
 
 
-
-
 }
 
 .index-pictures img {
@@ -68,63 +67,178 @@ ul {
 }
 
 
-.wikipedia{
+.wikipedia {
     text-transform: uppercase;
-    
+
     justify-content: space-between;
     border: 2px solid black;
     border-radius: 2%;
-    margin:  3%;
-    
-    
-    
-    
+    margin: 3%;
+
 
 }
 
-.tables, th , td{
-  width: 600px;
-  border: 1px solid black;
-  border-radius: 2%;
-  margin-top: 50%;
-  margin-left: 5px;
-  
+.tables, th, td {
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 2%;
+    margin-top: 50%;
+    margin-left: 5px;
 
-  
 
 }
 
-.all-types{
-    background-color: #FCDE70;
+.all-types {
+    background-color: #bfaf65;
 }
 
 .grass {
-    background-color: #008000;
+    background-color: #5eaf5e;
 
 }
 
 .fire {
-    background-color: #FF0000;
+    background-color: #e86a6a;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
 
 }
 
 .fire h1 {
-    color: #e61e1e;
+    color: #ffffff;
 }
 
 .water {
-    background-color: #0000FF;
+    background-color: #5f5fc6;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
 }
 
 .electric {
-    background-color: #FFFF00;
+    background-color: #e3e39a;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+
 }
 
 .rock {
     background-color: #C0C0C0;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
 }
 
 .index-pictures {
     overflow-y: auto;
-    height:400px;
+    height: 400px;
 }
+
+.bug {
+    background-color: darkolivegreen;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+}
+
+.fighting {
+    background-color: #264b5d;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+}
+
+.normal {
+    background-color: #615757;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+}
+
+.poison {
+    background-color: #cf769e;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+}
+
+.ground {
+    background-color: #676161;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+}
+
+.fairy {
+    background-color: lightpink;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+}
+
+.psychic {
+    background-color: #8045ac;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+}
+
+.ghost {
+    background-color: #3a3333;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
+    font-size: 150%;
+}
+
+
+

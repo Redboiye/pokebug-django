@@ -34,8 +34,7 @@ def home(request):
         pokemon_description_response = requests.get(description_url)
         pokemon_description_data = pokemon_description_response.json()
         pokemon_description = pokemon_description_data.get(
-            "flavor_text_entries")[0].get("flavor_text").replace("\n", " ").replace("\u000c", " ")
-
+            "flavor_text_entries")[3].get("flavor_text").replace("\n", " ").replace("\u000c", " ")
 
         # datubaze saglaba vai atjauno objektus.
         Pokemon.objects.update_or_create(
@@ -45,6 +44,7 @@ def home(request):
                 'type': pokemon_detail_type,
                 'picture': pokemon_detail_artwork,
                 'description': pokemon_description,
+
             }
         )
 
