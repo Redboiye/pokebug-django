@@ -13,20 +13,27 @@
 </head>
 <body class="{{ type }}">
 <div>
-    <h1>{{ pokemon.name }}</h1>
-    <h2>{{ type }} </h2>
-    {% if  pokemon.description %}
-        <p>{{ pokemon.description }}</p>
-    {% else %}
-        <p></p>
-    {% endif %}
+    <h1 id="pokemon_title">{{ pokemon.name }}</h1>
+</div>
+<div class="pokemon_main_content">
 
 
-    <img src="{{ pokemon.picture }}">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ pokemon.video }}"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="pokemon_pictures">
+        <img src="{{ pokemon.picture }}">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ pokemon.video }}"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="pokemon_description">
+
+        <h2>{{ type }} </h2>
+        {% if  pokemon.description %}
+            <p>{{ pokemon.description }}</p>
+        {% else %}
+            <p></p>
+        {% endif %}
+    </div>
 </div>
 
 </body>

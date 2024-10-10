@@ -11,6 +11,7 @@ h1 {
     text-transform: uppercase;
     color: #ffffff;
 
+
 }
 
 .main-content {
@@ -39,7 +40,7 @@ h1 {
 
 .index-pictures {
 
-    width: 50%;
+    width: auto;
     float: left;
     padding: 20px;
     margin: 3%;
@@ -50,14 +51,6 @@ h1 {
 
 }
 
-.index-pictures img {
-    max-width: 100%;
-    max-height: 100%;
-    width: 50%;
-    height: auto;
-    top: 150px;
-
-}
 
 ul {
     text-align: left;
@@ -67,39 +60,12 @@ ul {
 }
 
 
-.wikipedia {
-    text-transform: uppercase;
-
-    justify-content: space-between;
-    border: 2px solid black;
-    border-radius: 2%;
-    margin: 3%;
-
-
-}
-
-.tables, th, td {
-    width: 600px;
-    border: 1px solid black;
-    border-radius: 2%;
-    margin-top: 50%;
-    margin-left: 5px;
-
-
-}
-
-.all-types {
-    background-color: #bfaf65;
-}
-
 .grass {
     background-color: #5eaf5e;
     width: 50%;
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
     font-size: 150%;
 
 }
@@ -110,8 +76,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 
 }
@@ -126,9 +92,10 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
+    text-align: center;
 }
 
 .electric {
@@ -137,8 +104,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 
 }
@@ -149,12 +116,12 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 }
 
-.index-pictures {
+.pokemon_picture {
     overflow-y: auto;
     height: 400px;
 }
@@ -165,8 +132,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 }
 
@@ -176,8 +143,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 }
 
@@ -187,8 +154,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 }
 
@@ -198,8 +165,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 }
 
@@ -209,8 +176,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 }
 
@@ -220,8 +187,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 }
 
@@ -231,8 +198,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 }
 
@@ -242,10 +209,27 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
+
+
     font-size: 150%;
 }
 
+#pokemon_title {
 
+}
+
+.pokemon_main_content {
+
+
+}
+
+.pokemon_main_pictures {
+
+
+}
+
+.pokemon_description {
+
+
+}
 

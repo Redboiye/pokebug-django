@@ -1,6 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
+
+from .models import Pokemon
+from users.models import FavoritePokemon
 
 
 def register(request):
@@ -37,3 +40,24 @@ def user_login(request):
 def log_out(request):
     logout(request)
     return redirect('home')
+
+
+def add_favorite_pokemon(request, pokemon_name):
+    pokemon = get_object_or_404(Pokemon, name=pokemon_name)
+    # ta tu vari dabut useri kas ir ielagojies sesija
+    user = request.user
+    #mes pasaucam FavoritePokemon modeli
+    FavoritePokemon.objects.create(user=user, pokemon=pokemon)
+
+    return render(request, 'pokemon/pokemon_details.html')
+
+
+def favorite_pokemons_list(request):
+    user = request.user
+    favorite_pokemons = FavoritePokemon.objects.filter(user=user)
+
+    context = {
+        'favorites': favorite_pokemons
+    }
+
+    return render(request, 'users/favorites.html', context)

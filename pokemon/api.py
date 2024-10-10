@@ -13,7 +13,7 @@ def fetch_api_data():
     # dictionary ir type.
     data = response.json()
     results = data.get("results")
-
+    #lai mes varetu iet cauri listei un elementiem mums vajag izmantot for loop
     for pokemon in results:
         # elementi saraksta #atslega + vertiba veido dictionary
         # visur kur ir figut iekavas ir dictionary, izgustot vertiba ar .get pierakstot atslegu,
