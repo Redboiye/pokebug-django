@@ -48,8 +48,8 @@ def add_favorite_pokemon(request, pokemon_name):
     user = request.user
     #mes pasaucam FavoritePokemon modeli
     FavoritePokemon.objects.create(user=user, pokemon=pokemon)
-
-    return render(request, 'pokemon/pokemon_details.html')
+        #taisnais direct pec informacijas aptrades pasviez uz vajadzigo lapu
+    return redirect('pokemon_detail', pokemon_name=pokemon_name)
 
 
 def favorite_pokemons_list(request):

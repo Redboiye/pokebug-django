@@ -24,4 +24,5 @@ urlpatterns = [
     path("", views.home, name='home'),
     path("pokemon/<str:pokemon_name>", views.pokemon_detail, name='pokemon_detail'),
 
+
 ]

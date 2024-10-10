@@ -47,6 +47,8 @@ h1 {
     border: 2px solid black;
     border-radius: 2%;
     font-size: 150%;
+    overflow-y: scroll; height:400px;
+
 
 
 }
@@ -66,6 +68,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 
 }
@@ -76,8 +80,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 
 }
@@ -92,8 +96,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
     text-align: center;
 }
@@ -104,8 +108,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 
 }
@@ -116,8 +120,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 }
 
@@ -132,8 +136,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 }
 
@@ -143,8 +147,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 }
 
@@ -154,8 +158,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 }
 
@@ -165,8 +169,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 }
 
@@ -176,8 +180,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 }
 
@@ -187,8 +191,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 }
 
@@ -198,8 +202,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 }
 
@@ -209,8 +213,8 @@ ul {
     float: left;
     padding: 20px;
     margin: 3%;
-
-
+    border: 2px solid black;
+    border-radius: 2%;
     font-size: 150%;
 }
 

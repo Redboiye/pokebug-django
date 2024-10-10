@@ -11,8 +11,8 @@
     {% for pokemon in favorites %}
         <li>
 
-            <a href="{% url 'pokemon_detail' pokemon.name %}">
-                {{ pokemon.name }}
+            <a href="{% url 'pokemon_detail' pokemon.pokemon.name %}">
+                {{ pokemon.pokemon.name }}
             </a>
         </li>
     {% endfor %}

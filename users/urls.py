@@ -6,5 +6,5 @@ urlpatterns = [
     path('login/', user_login, name='login'),
     path('logout/', log_out, name='logout'),
     path('favorites/', favorite_pokemons_list, name='favorites'),
-    path('add_favorite_pokemons/', add_favorite_pokemon, name='add_favorite_pokemons'),
+    path('add_favorite_pokemons/<str:pokemon_name>', add_favorite_pokemon, name='add_favorite_pokemons'),
 ]

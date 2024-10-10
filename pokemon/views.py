@@ -19,7 +19,7 @@ def home(request):
     return render(request, "pokemon/index.html", context)
 
 
-def pokemon_detail(request, pokemon_name, ):
+def pokemon_detail(request, pokemon_name):
     pokemon = get_object_or_404(Pokemon, name=pokemon_name)
     context = {"pokemon": pokemon, "type": pokemon.type.lower()}
 
