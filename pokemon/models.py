@@ -8,6 +8,7 @@ class Pokemon(models.Model):
     picture = models.URLField(null=True)
     video = models.CharField(max_length=64, null=True)
     url = models.URLField(null=True)
+    favicon = models.URLField(null=True)
 
     def __str__(self):
         return self.name

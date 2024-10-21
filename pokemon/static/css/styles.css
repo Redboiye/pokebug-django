@@ -47,8 +47,8 @@ h1 {
     border: 2px solid black;
     border-radius: 2%;
     font-size: 150%;
-    overflow-y: scroll; height:400px;
-
+    overflow-y: scroll;
+    height: 400px;
 
 
 }
@@ -61,9 +61,7 @@ ul {
 
 }
 
-
-.grass {
-    background-color: #5eaf5e;
+.details-card {
     width: 50%;
     float: left;
     padding: 20px;
@@ -71,18 +69,15 @@ ul {
     border: 2px solid black;
     border-radius: 2%;
     font-size: 150%;
+}
+
+.grass {
+    background-color: #5eaf5e;
 
 }
 
 .fire {
     background-color: #e86a6a;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
 
 }
 
@@ -92,37 +87,17 @@ ul {
 
 .water {
     background-color: #5f5fc6;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
-    text-align: center;
+
 }
 
 .electric {
     background-color: #e3e39a;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
+
 
 }
 
 .rock {
     background-color: #C0C0C0;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
 }
 
 .pokemon_picture {
@@ -132,91 +107,53 @@ ul {
 
 .bug {
     background-color: darkolivegreen;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
+
 }
 
 .fighting {
     background-color: #264b5d;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
+
 }
 
 .normal {
     background-color: #615757;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
+
 }
 
 .poison {
     background-color: #cf769e;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
+
 }
 
 .ground {
     background-color: #676161;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
+
 }
 
 .fairy {
     background-color: lightpink;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
+
 }
 
 .psychic {
     background-color: #8045ac;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
+
 }
 
 .ghost {
     background-color: #3a3333;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    margin: 3%;
-    border: 2px solid black;
-    border-radius: 2%;
-    font-size: 150%;
+
 }
+
+.favorites-main-background {
+    background-color: #5996b6;
+    font-size: 100%;
+}
+
+.favorites_name {
+    font-size: 100%
+}
+
 
 #pokemon_title {
 

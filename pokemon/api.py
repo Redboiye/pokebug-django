@@ -3,8 +3,6 @@ from .models import Pokemon
 
 
 def fetch_api_data():
-
-
     url = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0"
     # get metode
     response = requests.get(url)
@@ -13,10 +11,10 @@ def fetch_api_data():
     # dictionary ir type.
     data = response.json()
     results = data.get("results")
-    #lai mes varetu iet cauri listei un elementiem mums vajag izmantot for loop
+    # lai mes varetu iet cauri listei un elementiem mums vajag izmantot for loop
     for pokemon in results:
         # elementi saraksta #atslega + vertiba veido dictionary
-        # visur kur ir figut iekavas ir dictionary, izgustot vertiba ar .get pierakstot atslegu,
+        # visur kur ir figur iekavas ir dictionary, izgustot vertiba ar .get pierakstot atslegu,
         # taja geta
         # no sava pirma objekta dabusi name, urli
         name = pokemon.get("name").capitalize()
@@ -28,6 +26,9 @@ def fetch_api_data():
         pokemon_detail_type = pokemon_types[0].get("type").get("name")
         pokemon_detail_artwork = pokemon_detail_data.get("sprites").get("other").get("official-artwork").get(
             "front_default")
+        pokemon_detail_favorites = pokemon_detail_data.get("sprites").get("front_default")
+        print(pokemon_detail_favorites)
+
         pokemon_id = pokemon_detail_data.get("id")
         description_url = f"https://pokeapi.co/api/v2/pokemon-species/{pokemon_id}"
         pokemon_description_response = requests.get(description_url)
@@ -43,6 +44,7 @@ def fetch_api_data():
                 'type': pokemon_detail_type,
                 'picture': pokemon_detail_artwork,
                 'description': pokemon_description,
+                'favicon': pokemon_detail_favorites,
 
             }
         )

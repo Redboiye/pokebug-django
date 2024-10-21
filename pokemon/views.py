@@ -27,3 +27,5 @@ def pokemon_detail(request, pokemon_name):
 
 
 
+
+

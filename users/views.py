@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from .models import Pokemon
 from users.models import FavoritePokemon
+from django.contrib import messages
 
 
 def register(request):
@@ -43,13 +44,23 @@ def log_out(request):
 
 
 def add_favorite_pokemon(request, pokemon_name):
-    pokemon = get_object_or_404(Pokemon, name=pokemon_name)
     # ta tu vari dabut useri kas ir ielagojies sesija
     user = request.user
-    #mes pasaucam FavoritePokemon modeli
-    FavoritePokemon.objects.create(user=user, pokemon=pokemon)
-        #taisnais direct pec informacijas aptrades pasviez uz vajadzigo lapu
-    return redirect('pokemon_detail', pokemon_name=pokemon_name)
+    # mes pasaucam FavoritePokemon modeli
+    pokemon = get_object_or_404(Pokemon, name=pokemon_name)
+
+    favorite_pokemon, created = FavoritePokemon.objects.get_or_create(
+        pokemon=pokemon,
+        user=user,
+    )
+    if created:
+        messages.success(request, f'{pokemon_name} Pokemon was added to your favorites.')
+    else:
+        messages.success(request,f' {pokemon_name} already exists.')
+    
+
+    # taisnais direct pec informacijas aptrades pasviez uz vajadzigo lapu
+    return redirect('favorites')
 
 
 def favorite_pokemons_list(request):
@@ -61,3 +72,5 @@ def favorite_pokemons_list(request):
     }
 
     return render(request, 'users/favorites.html', context)
+
+
