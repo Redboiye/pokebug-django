@@ -54,9 +54,9 @@ def add_favorite_pokemon(request, pokemon_name):
         user=user,
     )
     if created:
-        messages.success(request, f'{pokemon_name} Pokemon was added to your favorites.')
+        messages.success(request, f'{pokemon_name} Pokemon was added to your favorites')
     else:
-        messages.success(request,f' {pokemon_name} already exists.')
+        messages.warning(request,f' {pokemon_name} already exists')
     
 
     # taisnais direct pec informacijas aptrades pasviez uz vajadzigo lapu
