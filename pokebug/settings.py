@@ -29,6 +29,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+CORS_ALLOWED_ORIGINS = config("CORS_ALLOWED_ORIGINS").split(", ")
+CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS").split(", ")
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +42,18 @@ INSTALLED_APPS = [
     'pokemon',
     'users',
     'rest_framework',
+    'corsheaders',
 ]
+
+CORS_ALLOW_HEADERS = (
+    "accept",
+    "authorization",
+    "content-type",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = 'pokebug.urls'
@@ -82,6 +98,7 @@ DATABASES = {
         "PASSWORD": config("DB_PASSWORD", "password"),
         "HOST": config("DB_HOST", "127.0.0.1"),
         "PORT": config("DB_PORT"),
+
     }
 }
 
