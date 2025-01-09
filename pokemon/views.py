@@ -1,11 +1,10 @@
 from django.contrib.auth import authenticate, login, logout
-from django.http import JsonResponse
 from rest_framework import viewsets, status
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny,IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import PokemonSerializer
-from .models import Pokemon, Favorite
+from .serializers import PokemonSerializer,FavoriteSerializer
+from .models import Pokemon
 
 
 class PokemonViewSet(viewsets.ModelViewSet):
@@ -32,7 +31,8 @@ class LogInView(APIView):
             user = authenticate(request, username=username, password=password)
             if user:
                 login(request, user)
-                return Response({"message": "Login SuccessesFully"}, status=status.HTTP_201_CREATED)
+                return Response({"message": "Login SuccessesFully", "user": user.id},
+                                status=status.HTTP_201_CREATED)
         except Exception as e:
             return Response({'message': f'{e}'}, status=401)
 
@@ -44,17 +44,13 @@ class LogOutView(APIView):
         logout(request)
         return Response({"message": "Logout Successful"}, status=status.HTTP_201_CREATED)
 
-def add_favorite(request, pokemon_id):
-    user_id = request.GET.get("user_id")
-    if not user_id:
-        return JsonResponse({"error": "User ID is required"}, status=400)
 
-    try:
-        if request.method == "POST":
-            pokemon = Pokemon.objects.get(id=pokemon_id)
-            favorite, created = Favorite.objects.get_or_create(pokemon=pokemon, user_id=user_id)
-            favorite.is_favorite = not favorite.is_favorite
-            favorite.save()
-            return JsonResponse({"pokemon": pokemon.name, "is_favorite": favorite.is_favorite})
-    except Pokemon.DoesNotExist:
-        return JsonResponse({"error": "Pokemon not found"}, status=404)
+class AddFavorite(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        serializer = FavoriteSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
