@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import PokemonViewSet, LogInView, LogOutView
+from .views import PokemonViewSet, LogInView, LogOutView, add_favorite
 
 router = DefaultRouter()
 
@@ -27,5 +27,5 @@ urlpatterns = [
     path("", include(router.urls)),
     path("login", LogInView.as_view()),
     path("logout", LogOutView.as_view()),
-
+    path('pokemon/<int:pokemon_id>/favorite/', add_favorite),
 ]

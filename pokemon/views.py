@@ -1,10 +1,11 @@
 from django.contrib.auth import authenticate, login, logout
+from django.http import JsonResponse
 from rest_framework import viewsets, status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import PokemonSerializer
-from .models import Pokemon
+from .models import Pokemon, Favorite
 
 
 class PokemonViewSet(viewsets.ModelViewSet):
@@ -42,3 +43,18 @@ class LogOutView(APIView):
     def post(self, request):
         logout(request)
         return Response({"message": "Logout Successful"}, status=status.HTTP_201_CREATED)
+
+def add_favorite(request, pokemon_id):
+    user_id = request.GET.get("user_id")
+    if not user_id:
+        return JsonResponse({"error": "User ID is required"}, status=400)
+
+    try:
+        if request.method == "POST":
+            pokemon = Pokemon.objects.get(id=pokemon_id)
+            favorite, created = Favorite.objects.get_or_create(pokemon=pokemon, user_id=user_id)
+            favorite.is_favorite = not favorite.is_favorite
+            favorite.save()
+            return JsonResponse({"pokemon": pokemon.name, "is_favorite": favorite.is_favorite})
+    except Pokemon.DoesNotExist:
+        return JsonResponse({"error": "Pokemon not found"}, status=404)
