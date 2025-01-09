@@ -22,4 +22,3 @@ class Pokemon(models.Model):
 class Favorite(models.Model):
     pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE)
     user_id = models.IntegerField()
-    is_favorite = models.BooleanField(default=False)

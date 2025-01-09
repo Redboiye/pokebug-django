@@ -10,8 +10,7 @@ class PokemonSerializer(serializers.ModelSerializer):
 class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Favorite
-        fields = ['pokemon', 'user_id', 'is_favorite']
-        read_only_fields = ['pokemon', 'user_id']
+        fields = '__all__'
 
 
 

@@ -1,8 +1,11 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from rest_framework import viewsets, status
 from rest_framework.permissions import AllowAny,IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
+from .api import fetch_api_data
 from .serializers import PokemonSerializer,FavoriteSerializer
 from .models import Pokemon
 
@@ -25,7 +28,6 @@ class LogInView(APIView):
 
     def post(self, request):
         try:
-
             username = request.data.get('username')
             password = request.data.get('password')
             user = authenticate(request, username=username, password=password)
@@ -46,10 +48,14 @@ class LogOutView(APIView):
 
 
 class AddFavorite(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = []
 
-    def post(self, request):
-        serializer = FavoriteSerializer(data=request.data)
+    def post(self, request, pokemon_id):
+        pokemon = Pokemon.objects.get(pk=pokemon_id)
+        user_name = request.data.get("user_id")
+        user = User.objects.get(username=user_name).id
+        data = {"pokemon": pokemon.id, "user_id": user}
+        serializer = FavoriteSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=201)
